@@ -1,6 +1,6 @@
-id,name,description,path,icon,icon_type,icon_theme,menu_type,root_menu_id,display_position,status,created_by,modified_by,created_at,modified_at
-1,governance,governance,governance,compass,nzIcon,outline,1,0,1,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
-2,menu,menu,menu,menu,nzIcon,outline,2,1,1,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
-3,role,role,role,flag,nzIcon,outline,2,1,2,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
-4,password,password,password,key,nzIcon,outline,2,1,3,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
+id,name,description,path,icon,icon_type,icon_theme,menu_type,root_menu_id,display_position,menu_owner,status,created_by,modified_by,created_at,modified_at
+1,governance,governance,governance,compass,nzIcon,outline,1,0,1,Access,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
+2,menu,menu,menu,menu,nzIcon,outline,2,1,1,Access,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
+3,role,role,role,flag,nzIcon,outline,2,1,2,Access,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
+4,password,password,password,key,nzIcon,outline,2,1,3,Access,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
 
