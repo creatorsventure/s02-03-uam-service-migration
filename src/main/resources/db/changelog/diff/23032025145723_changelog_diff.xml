@@ -1,0 +1,42 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="ram (generated)" id="1742741849025-2">
+        <addColumn tableName="password">
+            <column name="encrypted_password" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-3">
+        <addColumn tableName="password">
+            <column name="user_detail_id" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-4">
+        <addUniqueConstraint columnNames="user_detail_id" constraintName="UC_PASSWORDUSER_DETAIL_ID_COL"
+                             tableName="password"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-5">
+        <addForeignKeyConstraint baseColumnNames="user_detail_id" baseTableName="password"
+                                 constraintName="FK2pj7lb6p7tj5ecr5ot39lin3p" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user_detail"
+                                 validate="true"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-6">
+        <dropUniqueConstraint constraintName="UC_USER_DETAILUSER_NAME_COL" tableName="user_detail"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-7">
+        <dropColumn columnName="encr_password" tableName="password"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-8">
+        <dropColumn columnName="failed_login_attempts" tableName="user_detail"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-9">
+        <dropColumn columnName="user_name" tableName="user_detail"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742741849025-1">
+        <modifyDataType columnName="mobile_number" newDataType="varchar(255)" tableName="user_detail"/>
+    </changeSet>
+</databaseChangeLog>
