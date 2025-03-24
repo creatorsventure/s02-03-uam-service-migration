@@ -1,4 +1,4 @@
-id,name,description,owner_code,status,created_by,modified_by,created_at,modified_at
+id,name,description,service_code,status,created_by,modified_by,created_at,modified_at
 AUTOMO001,Access,UAM Service Owner,ACCS,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
 AUTOMO002,Configuration,Configuration Service Owner,CNFG,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
 AUTOMO003,Organization,Organization Service Owner,ORGN,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP

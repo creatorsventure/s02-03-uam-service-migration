@@ -4,8 +4,8 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
     <changeSet id="1803202501" author="ramakrishna (generated)">
-        <loadData tableName="menu_owner"
-                  file="src/main/resources/db/changelog/meta/menu_owner_metadata.csv"
+        <loadData tableName="service"
+                  file="src/main/resources/db/changelog/meta/service_metadata.csv"
                   separator=","
                   commentLineStartsWith="//">
         </loadData>

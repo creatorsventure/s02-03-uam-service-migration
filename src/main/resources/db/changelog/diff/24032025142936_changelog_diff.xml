@@ -2,7 +2,7 @@
 <databaseChangeLog
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <changeSet author="ram (generated)" id="1742818367342-1">
+    <changeSet author="ram (generated)" id="1742826581477-1">
         <createTable tableName="menu">
             <column name="id" type="VARCHAR(255)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="menuPK"/>
@@ -41,35 +41,12 @@
             <column name="root_menu_id" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="menu_owner_id" type="VARCHAR(255)">
+            <column name="service_id" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-2">
-        <createTable tableName="menu_owner">
-            <column name="id" type="VARCHAR(255)">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="menu_ownerPK"/>
-            </column>
-            <column name="created_at" type="timestamp(6)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="created_by" type="VARCHAR(250)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="description" type="VARCHAR(255)"/>
-            <column name="modified_at" type="timestamp(6)"/>
-            <column name="modified_by" type="VARCHAR(250)"/>
-            <column name="name" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column defaultValueBoolean="false" name="status" type="TINYINT"/>
-            <column name="owner_code" type="VARCHAR(250)">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-    </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-3">
+    <changeSet author="ram (generated)" id="1742826581477-2">
         <createTable tableName="password">
             <column name="id" type="VARCHAR(255)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="passwordPK"/>
@@ -96,7 +73,7 @@
             <column name="user_detail_id" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-4">
+    <changeSet author="ram (generated)" id="1742826581477-3">
         <createTable tableName="permission">
             <column name="id" type="VARCHAR(255)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="permissionPK"/>
@@ -119,7 +96,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-5">
+    <changeSet author="ram (generated)" id="1742826581477-4">
         <createTable tableName="role">
             <column name="id" type="VARCHAR(255)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="rolePK"/>
@@ -137,16 +114,10 @@
                 <constraints nullable="false"/>
             </column>
             <column defaultValueBoolean="false" name="status" type="TINYINT"/>
-            <column name="permission" type="INT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="role_type" type="INT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="menu_owner_id" type="VARCHAR(255)"/>
+            <column name="service_id" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-6">
+    <changeSet author="ram (generated)" id="1742826581477-5">
         <createTable tableName="role_menu_mapping">
             <column name="menu_id" type="VARCHAR(255)">
                 <constraints nullable="false"/>
@@ -156,7 +127,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-7">
+    <changeSet author="ram (generated)" id="1742826581477-6">
         <createTable tableName="role_permission_mapping">
             <column name="role_id" type="VARCHAR(255)">
                 <constraints nullable="false"/>
@@ -166,7 +137,30 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-8">
+    <changeSet author="ram (generated)" id="1742826581477-7">
+        <createTable tableName="service">
+            <column name="id" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="servicePK"/>
+            </column>
+            <column name="created_at" type="timestamp(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="modified_at" type="timestamp(6)"/>
+            <column name="modified_by" type="VARCHAR(250)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueBoolean="false" name="status" type="TINYINT"/>
+            <column name="service_code" type="VARCHAR(250)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742826581477-8">
         <createTable tableName="user_detail">
             <column name="id" type="VARCHAR(255)">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="user_detailPK"/>
@@ -196,67 +190,67 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-9">
+    <changeSet author="ram (generated)" id="1742826581477-9">
         <addUniqueConstraint columnNames="path" constraintName="UC_MENUPATH_COL" tableName="menu"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-10">
-        <addUniqueConstraint columnNames="owner_code" constraintName="UC_MENU_OWNEROWNER_CODE_COL"
-                             tableName="menu_owner"/>
-    </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-11">
+    <changeSet author="ram (generated)" id="1742826581477-10">
         <addUniqueConstraint columnNames="user_detail_id" constraintName="UC_PASSWORDUSER_DETAIL_ID_COL"
                              tableName="password"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-12">
+    <changeSet author="ram (generated)" id="1742826581477-11">
         <addUniqueConstraint columnNames="permission_code" constraintName="UC_PERMISSIONPERMISSION_CODE_COL"
                              tableName="permission"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-13">
+    <changeSet author="ram (generated)" id="1742826581477-12">
+        <addUniqueConstraint columnNames="service_code" constraintName="UC_SERVICESERVICE_CODE_COL"
+                             tableName="service"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742826581477-13">
         <addUniqueConstraint columnNames="email" constraintName="UC_USER_DETAILEMAIL_COL" tableName="user_detail"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-14">
+    <changeSet author="ram (generated)" id="1742826581477-14">
         <addUniqueConstraint columnNames="user_id" constraintName="UC_USER_DETAILUSER_ID_COL" tableName="user_detail"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-15">
+    <changeSet author="ram (generated)" id="1742826581477-15">
         <addForeignKeyConstraint baseColumnNames="user_detail_id" baseTableName="password"
                                  constraintName="FK2pj7lb6p7tj5ecr5ot39lin3p" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="user_detail"
                                  validate="true"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-16">
+    <changeSet author="ram (generated)" id="1742826581477-16">
         <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="role_menu_mapping"
                                  constraintName="FK7xjj2jdybhpvkyksogr6r7suu" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="menu"
                                  validate="true"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-17">
-        <addForeignKeyConstraint baseColumnNames="menu_owner_id" baseTableName="role"
-                                 constraintName="FKk0ma5hjpp2ofsrvnnw6der2mo" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="menu_owner"
-                                 validate="true"/>
-    </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-18">
-        <addForeignKeyConstraint baseColumnNames="menu_owner_id" baseTableName="menu"
-                                 constraintName="FKk2rmj2wqja1u86i4oqi0rg0v2" deferrable="false"
-                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="menu_owner"
-                                 validate="true"/>
-    </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-19">
+    <changeSet author="ram (generated)" id="1742826581477-17">
         <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="role_permission_mapping"
                                  constraintName="FKmw1igvkrcpqq77w0o32gnbq2r" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="role"
                                  validate="true"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-20">
+    <changeSet author="ram (generated)" id="1742826581477-18">
         <addForeignKeyConstraint baseColumnNames="menu_id" baseTableName="role_menu_mapping"
                                  constraintName="FKp742b9o8eeg8yx860sxs5eyky" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="role"
                                  validate="true"/>
     </changeSet>
-    <changeSet author="ram (generated)" id="1742818367342-21">
+    <changeSet author="ram (generated)" id="1742826581477-19">
+        <addForeignKeyConstraint baseColumnNames="service_id" baseTableName="menu"
+                                 constraintName="FKpdx6qfu5njn6nuijdwmn39kxm" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="service"
+                                 validate="true"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742826581477-20">
         <addForeignKeyConstraint baseColumnNames="permission_id" baseTableName="role_permission_mapping"
                                  constraintName="FKpuihlymysj88vc9lp90rsocug" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="permission"
+                                 validate="true"/>
+    </changeSet>
+    <changeSet author="ram (generated)" id="1742826581477-21">
+        <addForeignKeyConstraint baseColumnNames="service_id" baseTableName="role"
+                                 constraintName="FKqmgmgxr4fv3khdtby9mcry15h" deferrable="false"
+                                 initiallyDeferred="false" referencedColumnNames="id" referencedTableName="service"
                                  validate="true"/>
     </changeSet>
 </databaseChangeLog>

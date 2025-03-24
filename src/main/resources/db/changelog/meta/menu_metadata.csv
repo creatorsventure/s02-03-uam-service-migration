@@ -1,4 +1,4 @@
-id,name,description,path,icon,icon_type,icon_theme,menu_type,root_menu_id,display_position,menu_owner_id,status,created_by,modified_by,created_at,modified_at
+id,name,description,path,icon,icon_type,icon_theme,menu_type,root_menu_id,display_position,service_id,status,created_by,modified_by,created_at,modified_at
 AUTOMN001,governance,governance,governance,compass,nzIcon,outline,1,NA,1,AUTOMO001,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
 AUTOMN002,menu,menu,menu,menu,nzIcon,outline,2,AUTOMN001,1,AUTOMO001,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
 AUTOMN003,role,role,role,flag,nzIcon,outline,2,AUTOMN001,2,AUTOMO001,true,AUTO_SCRIPT,AUTO_SCRIPT,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP
